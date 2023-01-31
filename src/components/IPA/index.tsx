@@ -16,7 +16,10 @@ const IPA = ({ ipa, className }: Props) => {
       </div>
       <div
         className="col-span-3 flex justify-center"
-        onClick={() => playSound(`${getBasePath()}/sounds/badlab.mp3`)}
+        onClick={() => {
+          console.log("basepath", getBasePath());
+          playSound(`${getBasePath()}/sounds/badlab.mp3`);
+        }}
       >
         <img
           src={`${getBasePath()}/images/icon-sound.svg`}
