@@ -1,6 +1,7 @@
 import IPA from "@components/IPA";
 import React from "react";
 import { listIPA } from "src/constants";
+import { getBasePath } from "src/utils";
 
 const Home: React.FC = () => {
   const renderVowels = () => {
@@ -40,7 +41,10 @@ const Home: React.FC = () => {
       {renderVowels()}
       {renderConsonants()}
       <audio controls>
-        <source src="/sounds/badlab.mp3" type="audio/mp3"></source>
+        <source
+          src={`${getBasePath()}/sounds/badlab.mp3`}
+          type="audio/mp3"
+        ></source>
       </audio>
     </div>
   );
