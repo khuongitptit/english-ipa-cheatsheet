@@ -17,7 +17,9 @@ const IPA = ({ ipa, className }: Props) => {
       <div
         className="col-span-3 flex justify-center"
         onClick={() => {
-          console.log("basepath", getBasePath());
+          console.log("getBasePath", getBasePath());
+          console.log("GITHUB_ACTIONS", process.env.GITHUB_ACTIONS);
+          console.log("GITHUB_REPOSITORY", process.env.GITHUB_REPOSITORY);
           playSound(`${getBasePath()}/sounds/badlab.mp3`);
         }}
       >
