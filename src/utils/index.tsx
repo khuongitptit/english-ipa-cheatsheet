@@ -1,4 +1,5 @@
 const playSound = (url: string) => {
+  console.log("sound", url);
   const context = new AudioContext();
   const source = context.createBufferSource();
   source.connect(context.destination);
