@@ -39,9 +39,6 @@ const Home: React.FC = () => {
     <div className="p-10 grid grid-cols-2 gap-5">
       {renderVowels()}
       {renderConsonants()}
-      <audio controls>
-        <source src="/sounds/badlab.mp3" type="audio/mp3"></source>
-      </audio>
     </div>
   );
 };
