@@ -14,4 +14,13 @@ const playSound = (url: string) => {
   request.send();
 };
 
-export { playSound };
+const getBasePath = () => {
+  const isGithubActions = process.env.GITHUB_ACTIONS || false;
+  if (isGithubActions) {
+    const repo = process.env.GITHUB_REPOSITORY!.replace(/.*?\//, "");
+    return "/" + repo;
+  }
+  return "";
+};
+
+export { playSound, getBasePath };

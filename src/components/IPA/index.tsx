@@ -1,5 +1,5 @@
 import { IIPA } from "src/constants";
-import { playSound } from "src/utils";
+import { getBasePath, playSound } from "src/utils";
 
 interface Props {
   ipa: IIPA;
@@ -16,9 +16,12 @@ const IPA = ({ ipa, className }: Props) => {
       </div>
       <div
         className="col-span-3 flex justify-center"
-        onClick={() => playSound(ipa.exampleSound)}
+        onClick={() => playSound(`${getBasePath()}${ipa.exampleSound}`)}
       >
-        <img src="/images/icon-sound.svg" className="w-6 h-6" />
+        <img
+          src={`${getBasePath()}/images/icon-sound.svg`}
+          className="w-6 h-6"
+        />
       </div>
     </div>
   );
