@@ -1,13 +1,12 @@
 import IPA from "@components/IPA";
 import React from "react";
 import { listIPA } from "src/constants";
-import { getBasePath } from "src/utils";
 
 const Home: React.FC = () => {
   const renderVowels = () => {
     return (
       <div className="border border-gray-500 rounded-md">
-        <div className="border-b border-gray-300 text-center font-bold">
+        <div className="border-b border-gray-400 text-center text-xl font-bold bg-green-100 rounded-t-md">
           Vowels
         </div>
         {listIPA.vowels.map((ipa) => (
@@ -23,7 +22,7 @@ const Home: React.FC = () => {
   const renderConsonants = () => {
     return (
       <div className="border border-gray-500 rounded-md">
-        <div className="border-b border-gray-300 text-center font-bold">
+        <div className="border-b border-gray-400 text-center text-xl font-bold bg-green-100 rounded-t-md">
           Consonants
         </div>
         {listIPA.consonants.map((ipa) => (
