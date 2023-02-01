@@ -14,19 +14,20 @@ const IPA = ({ ipa, className }: Props) => {
       <div className="col-span-3">
         {ipa.examples.map((example) => example.word).join(", ")}
       </div>
-      <div
-        className="col-span-3 flex justify-center"
-        onClick={() => {
-          console.log("getBasePath", getBasePath());
-          console.log("GITHUB_ACTIONS", process.env.GITHUB_ACTIONS);
-          console.log("GITHUB_REPOSITORY", process.env.GITHUB_REPOSITORY);
-          playSound(`${getBasePath()}/sounds/badlab.mp3`);
-        }}
-      >
+      <div className="col-span-3 flex justify-center">
         <img
           src={`${getBasePath()}/images/icon-sound.svg`}
           className="w-6 h-6"
+          onClick={() =>
+            (document.getElementById(ipa.symbol) as HTMLAudioElement).play()
+          }
         />
+        <audio controls id={ipa.symbol} className="hidden">
+          <source
+            src={`${getBasePath()}${ipa.exampleSound}`}
+            type="audio/mp3"
+          ></source>
+        </audio>
       </div>
     </div>
   );
