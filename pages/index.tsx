@@ -5,7 +5,7 @@ import { listIPA } from "src/constants";
 const Home: React.FC = () => {
   const renderVowels = () => {
     return (
-      <div className="border border-gray-500 rounded-md">
+      <div className="border border-gray-500 rounded-md col-span-2 sm:col-span-1 my-2">
         <div className="border-b border-gray-400 text-center text-xl font-bold bg-green-100 rounded-t-md">
           Vowels
         </div>
@@ -21,7 +21,7 @@ const Home: React.FC = () => {
   };
   const renderConsonants = () => {
     return (
-      <div className="border border-gray-500 rounded-md">
+      <div className="border border-gray-500 rounded-md col-span-2 sm:col-span-1 my-2">
         <div className="border-b border-gray-400 text-center text-xl font-bold bg-green-100 rounded-t-md">
           Consonants
         </div>
@@ -36,7 +36,7 @@ const Home: React.FC = () => {
     );
   };
   return (
-    <div className="p-10 grid grid-cols-2 gap-5">
+    <div className="p-4 sm:p-10 grid grid-cols-2 gap-5">
       {renderVowels()}
       {renderConsonants()}
     </div>
