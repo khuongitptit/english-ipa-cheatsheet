@@ -30,7 +30,7 @@ const IPA = ({ ipa, className }: Props) => {
         dangerouslySetInnerHTML={{
           __html: ipa.examples
             .map(renderUnderlinedWord)
-            .join("<span>, </span>"),
+            .join("<span>,&nbsp;</span>"),
         }}
       ></div>
       <div className="flex justify-center">
